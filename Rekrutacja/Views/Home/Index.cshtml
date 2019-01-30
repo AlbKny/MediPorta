@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@using Rekrutacja.Models.Home
+@model IndexModel
+
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Count</th>
+        <th>Popularity in Collection</th>
+    </tr>
+
+    @{int counter = 1;
+        foreach (var item in Model.TagItemList)
+        {
+            <tr>
+                <td>@counter</td>
+                <td>@item.Name</td>
+                <td>@item.Count</td>
+                <td>@item.InCollectionPopularity %</td>
+            </tr>
+            counter++;
+        }
+    }
+
+</table>
